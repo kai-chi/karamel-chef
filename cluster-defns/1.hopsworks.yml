@@ -22,6 +22,9 @@ attrs:
     kagent_liveness:
       enabled: true
       threshold: "40s"
+  hadoop_spark:
+    hopsutil:
+      url: http://snurran.sics.se/hops/hopsworks/users/hops-util-0.10.0-SNAPSHOT-kajetan.jar
 
 groups:
   namenodes:
