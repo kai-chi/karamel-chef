@@ -4,8 +4,8 @@ baremetal:
 
 cookbooks:
   hopsworks:
-    github: logicalclocks/hopsworks-chef
-    branch: master
+    github: kai-chi/hopsworks-chef
+    branch: HOPSWORKS-1255
 
 attrs:
   install:
@@ -22,10 +22,21 @@ attrs:
     kagent_liveness:
       enabled: true
       threshold: "40s"
+  hadoop_spark:
+    url: http://snurran.sics.se/hops/spark-2.4.4.0-bin-without-hadoop-with-hive-with-r.tgz
+    hopsutil:
+      url: http://snurran.sics.se/hops/kajetan/hops-util-1.0.0-SNAPSHOT.jar
+    hopsexamples_spark:
+      url: http://snurran.sics.se/hops/kajetan/hops-examples-spark-1.0.0-SNAPSHOT.jar
+
   conda:
     channels:
       default_mirrors: "http://bbc2.sics.se:8000/pkgs/main/linux-64,http://bbc2.sics.se:8000/pkgs/main/noarch"
       pytorch: "http://bbc2.sics.se:8000/pytorch"
+    hops-util-py:
+      install-mode: "git"
+      repo: "kai-chi"
+      branch: "HOPSWORKS-1255"
 
 groups:
   namenodes:
